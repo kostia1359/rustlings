@@ -8,8 +8,6 @@
 // more than 40 at once, each apple only costs 1! Write a function that calculates
 // the price of an order of apples given the quantity bought. No hints this time!
 
-// I AM NOT DONE
-
 // Put your function here!
 // fn calculate_apple_price {
 
@@ -23,4 +21,15 @@ fn verify_test() {
     assert_eq!(70, price1);
     assert_eq!(80, price2);
     assert_eq!(65, price3);
+}
+const NUMBER_OF_APPLES_TO_GET_DISCOUNT: i32 = 40;
+const PRICE_PER_APPLE_WITH_DISCOUNT: i32 = 1;
+const PRICE_PER_APPLE_WITHOUT_DISCOUNT: i32 = 2;
+
+fn calculate_apple_price(number_of_apples: i32) -> i32 {
+    if number_of_apples > NUMBER_OF_APPLES_TO_GET_DISCOUNT {
+        return number_of_apples * PRICE_PER_APPLE_WITH_DISCOUNT;
+    }
+
+    number_of_apples * PRICE_PER_APPLE_WITHOUT_DISCOUNT
 }
